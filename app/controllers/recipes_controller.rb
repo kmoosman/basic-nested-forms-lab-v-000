@@ -1,8 +1,16 @@
 class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe.ingredients.build(address_type: 'work')
+    @recipe.ingredients.build(name: 'butter')
+    @recipe.ingredients.build(name: 'flour')
   end
+
+  # create_table "ingredients", force: :cascade do |t|
+  #   t.string   "name"
+  #   t.string   "quantity"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.integer  "recipe_id"
 
   def index
     @recipes = Recipe.all
