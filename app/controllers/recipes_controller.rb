@@ -1,8 +1,6 @@
 class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe.ingredients.build(name: 'butter')
-    @recipe.ingredients.build(name: 'flour')
   end
 
   # create_table "ingredients", force: :cascade do |t|
@@ -18,6 +16,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+
   end
 
   def create
